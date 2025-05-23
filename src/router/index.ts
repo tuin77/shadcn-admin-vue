@@ -14,13 +14,13 @@ const router = createRouter({
       component: Main,
       children: [
         {
-          path: '/dashboard1',
-          name: 'dashboard1',
+          path: '/dashboard',
+          name: 'dashboard',
           component: () => import('@/views/dashboard/Example.vue'),
         },
         {
-          path: '/dashboard',
-          name: 'dashboard',
+          path: '/dashboard1',
+          name: 'dashboard1',
           component: () => import('@/views/dashboard1.vue'),
         },
         {

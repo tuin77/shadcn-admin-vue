@@ -52,8 +52,14 @@ defineProps<{
             <SidebarMenuSub>
               <SidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
                 <SidebarMenuSubButton as-child>
-                  <RouterLink :to="subItem.url">
-                    <span>{{ subItem.title }}</span>
+                  <RouterLink :to="subItem.url" custom v-slot="{ isActive, href, navigate }">
+                    <a
+                      :href="href"
+                      @click="navigate"
+                      :class="isActive ? 'bg-[hsla(160,100%,37%,0.2)] ' : 'inactiveClass'"
+                    >
+                      <span>{{ subItem.title }} </span>
+                    </a>
                   </RouterLink>
                 </SidebarMenuSubButton>
               </SidebarMenuSubItem>
