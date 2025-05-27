@@ -56,7 +56,11 @@ defineProps<{
                     <a
                       :href="href"
                       @click="navigate"
-                      :class="isActive ? 'bg-[hsla(160,100%,37%,0.2)] ' : 'inactiveClass'"
+                      :class="
+                        isActive && subItem.url !== '#'
+                          ? 'bg-[hsla(160,100%,37%,0.2)] '
+                          : 'inactiveClass'
+                      "
                     >
                       <span>{{ subItem.title }} </span>
                     </a>

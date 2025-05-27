@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BarChart } from '@/components/ui/chart-bar'
+// import { BarChart } from '@/components/ui/chart-bar'
 
 const data = [
   { name: 'Jan', total: Math.floor(Math.random() * 5000) + 1000 },
@@ -18,5 +18,6 @@ const data = [
 </script>
 
 <template>
-  <BarChart :data="data" :categories="['total']" :index="'name'" :rounded-corners="4" />
+  <!-- <BarChart :data="data" :categories="['total']" :index="'name'" :rounded-corners="4" /> -->
+  <div></div>
 </template>

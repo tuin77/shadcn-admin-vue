@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from 'vue'
+import { computed } from 'vue'
 import { cn } from '@/lib/utils'
 import { Skeleton } from '@/components/ui/skeleton'
 
@@ -9,7 +10,7 @@ const props = defineProps<{
 }>()
 
 const width = computed(() => {
-  return `${Math.floor(Math.random() * 40) + 50}%`;
+  return `${Math.floor(Math.random() * 40) + 50}%`
 })
 </script>
 
@@ -19,11 +20,7 @@ const width = computed(() => {
     data-sidebar="menu-skeleton"
     :class="cn('flex h-8 items-center gap-2 rounded-md px-2', props.class)"
   >
-    <Skeleton
-      v-if="showIcon"
-      class="size-4 rounded-md"
-      data-sidebar="menu-skeleton-icon"
-    />
+    <Skeleton v-if="showIcon" class="size-4 rounded-md" data-sidebar="menu-skeleton-icon" />
 
     <Skeleton
       class="h-4 max-w-(--skeleton-width) flex-1"

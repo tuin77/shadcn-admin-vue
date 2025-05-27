@@ -16,6 +16,9 @@
     "types": ["unplugin-icons/types/vue", "node"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "declaration": false,
+    "outDir": "dist",
+    "sourceMap": true
   }
 }

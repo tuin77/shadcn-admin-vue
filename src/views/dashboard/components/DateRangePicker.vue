@@ -4,6 +4,7 @@ import { CalendarDate, DateFormatter, getLocalTimeZone } from '@internationalize
 import { Calendar as CalendarIcon } from 'lucide-vue-next'
 
 import { ref } from 'vue'
+import type { Ref } from 'vue'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
