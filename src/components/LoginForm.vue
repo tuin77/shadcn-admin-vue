@@ -14,7 +14,7 @@ const props = defineProps<{
 const router = useRouter()
 
 const handleLogin = () => {
-  router.push('/dashboard1')
+  router.push('/')
 }
 </script>
 

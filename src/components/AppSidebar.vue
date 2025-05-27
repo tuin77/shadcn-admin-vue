@@ -63,11 +63,11 @@ const data = {
       items: [
         {
           title: 'History',
-          url: '/dashboard1',
+          url: '/',
         },
         {
-          title: 'dashboard',
-          url: '/dashboard',
+          title: 'dashboard1',
+          url: '/dashboard1',
         },
         {
           title: 'tasks',
