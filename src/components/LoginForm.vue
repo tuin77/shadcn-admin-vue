@@ -26,7 +26,7 @@ const handleLogin = () => {
         <CardDescription> Login with your Apple or Google account </CardDescription>
       </CardHeader>
       <CardContent>
-        <form>
+        <form @submit.prevent="handleLogin">
           <div class="grid gap-6">
             <div class="flex flex-col gap-4">
               <Button variant="outline" class="w-full">
@@ -67,9 +67,9 @@ const handleLogin = () => {
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input id="password" type="password" required placeholder="your password" />
               </div>
-              <Button type="submit" class="w-full" @click="handleLogin"> Login </Button>
+              <Button type="submit" class="w-full"> Login </Button>
             </div>
             <div class="text-center text-sm">
               Don't have an account?

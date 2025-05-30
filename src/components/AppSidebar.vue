@@ -62,16 +62,16 @@ const data = {
       isActive: true,
       items: [
         {
-          title: 'History',
+          title: 'dashboard',
           url: '/',
         },
         {
-          title: 'dashboard1',
-          url: '/dashboard1',
+          title: 'table',
+          url: '/table',
         },
         {
-          title: 'tasks',
-          url: '/tasks',
+          title: 'blankPage',
+          url: '/blankPage',
         },
       ],
     },

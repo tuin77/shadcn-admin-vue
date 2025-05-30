@@ -52,12 +52,12 @@ defineProps<{
             <SidebarMenuSub>
               <SidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
                 <SidebarMenuSubButton as-child>
-                  <RouterLink :to="subItem.url" custom v-slot="{ isActive, href, navigate }">
+                  <RouterLink :to="subItem.url" custom v-slot="{ href, navigate, isExactActive }">
                     <a
                       :href="href"
                       @click="navigate"
                       :class="
-                        isActive && subItem.url !== '#'
+                        isExactActive && subItem.url !== '#'
                           ? 'bg-[hsla(160,100%,37%,0.2)] '
                           : 'inactiveClass'
                       "

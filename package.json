@@ -19,6 +19,8 @@
     "@internationalized/date": "^3.8.1",
     "@tailwindcss/vite": "^4.1.7",
     "@tanstack/vue-table": "^8.21.3",
+    "@unovis/ts": "^1.5.2",
+    "@unovis/vue": "^1.5.2",
     "@vueuse/core": "^13.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

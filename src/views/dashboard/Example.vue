@@ -6,11 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import DateRangePicker from './components/DateRangePicker.vue'
 import MainNav from './components/MainNav.vue'
-// import Overview from './components/Overview.vue'
+import Overview from './components/Overview.vue'
 import RecentSales from './components/RecentSales.vue'
 
 import Search from './components/Search.vue'
-// import TeamSwitcher from './components/TeamSwitcher.vue'
+import TeamSwitcher from './components/TeamSwitcher.vue'
 import UserNav from './components/UserNav.vue'
 </script>
 
@@ -31,7 +31,7 @@ import UserNav from './components/UserNav.vue'
   <div class="hidden flex-col md:flex">
     <div class="border-b">
       <div class="flex h-16 items-center px-4">
-        <!-- <TeamSwitcher /> -->
+        <TeamSwitcher />
         <MainNav class="mx-6" />
         <div class="ml-auto flex items-center space-x-4">
           <Search />
@@ -150,7 +150,7 @@ import UserNav from './components/UserNav.vue'
                 <CardTitle>Overview</CardTitle>
               </CardHeader>
               <CardContent class="pl-2">
-                <!-- <Overview /> -->
+                <Overview />
               </CardContent>
             </Card>
             <Card class="col-span-3">
