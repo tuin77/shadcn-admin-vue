@@ -70,8 +70,8 @@ const data = {
           url: '/table',
         },
         {
-          title: 'blankPage',
-          url: '/blankPage',
+          title: 'chats',
+          url: '/chats',
         },
       ],
     },

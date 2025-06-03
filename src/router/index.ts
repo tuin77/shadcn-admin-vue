@@ -28,9 +28,9 @@ const router = createRouter({
           component: () => import('@/views/tasks/Example.vue'),
         },
         {
-          path: '/about',
-          name: 'about',
-          component: () => import('@/views/AboutView.vue'),
+          path: '/chats',
+          name: 'chats',
+          component: () => import('@/views/chats'),
         },
       ]
     },
