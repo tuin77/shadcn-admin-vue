@@ -36,6 +36,7 @@
     "zod": "^3.25.30"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.8.0",
     "@iconify-json/radix-icons": "^1.2.2",
     "@iconify/vue": "^5.0.0",
     "@tsconfig/node22": "^22.0.1",

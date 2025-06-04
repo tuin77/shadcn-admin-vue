@@ -73,6 +73,10 @@ const data = {
           title: 'chats',
           url: '/chats',
         },
+        {
+          title: 'users',
+          url: '/users',
+        },
       ],
     },
     {

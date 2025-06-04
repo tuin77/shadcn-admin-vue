@@ -29,6 +29,7 @@ type Props = {
 }
 export function NewChat({ users, onOpenChange, open }: Props) {
   const selectedUsers = ref<User[]>([])
+  const count = ref(1)
   function setSelectedUsers(val: User[]) {
 
     selectedUsers.value = val
@@ -48,6 +49,8 @@ export function NewChat({ users, onOpenChange, open }: Props) {
 
   watchEffect(() => {
     if (!open) {
+      console.log("open", open);
+
       setSelectedUsers([])
     }
   },)
@@ -59,6 +62,14 @@ export function NewChat({ users, onOpenChange, open }: Props) {
           <DialogTitle>New message</DialogTitle>
         </DialogHeader>
         <div class='flex flex-col gap-4'>
+          <div>count: {count.value}</div>
+          <button
+            onClick={() => {
+              count.value++
+            }}
+          >
+            add
+          </button>
           <div class='flex flex-wrap items-center gap-2'>
             <span class='text-muted-foreground text-sm'>To:</span>
             {selectedUsers.value.map((user: User) => (
