@@ -63,6 +63,7 @@ export default defineComponent({
 
     const users = conversations.map(({ messages, ...user }) => user)
     function setCreateConversationDialog(val: boolean) {
+
       createConversationDialogOpened.value = val
     }
 
@@ -101,12 +102,12 @@ export default defineComponent({
                   class='w-full flex-1 bg-inherit text-sm focus-visible:outline-hidden'
                   placeholder='Search chat...'
                   value={search.value}
-                  onChange={(e) => search.value = e.target.value}
+                  onChange={(e) => search.value = (e.target as HTMLInputElement).value}
                 />
               </label>
             </div>
             <ScrollArea class='-mx-3 h-full p-3'>
-              {filteredChatList.value.map((chatUsr) => {
+              {filteredChatList.value.map((chatUsr: ChatUser) => {
                 const { id, profile, username, messages, fullName } = chatUsr
                 const lastConvo = messages[0]
                 const lastMsg =
@@ -114,7 +115,7 @@ export default defineComponent({
                     ? `You: ${lastConvo.message}`
                     : lastConvo.message
                 return (
-                  < >
+                  <>
                     <button
                       type='button'
                       key={id}
@@ -154,7 +155,7 @@ export default defineComponent({
             <div
               class={cn(
                 'bg-primary-foreground absolute inset-0 left-full z-50 hidden w-full flex-1 flex-col rounded-md border shadow-xs transition-all duration-200 sm:static sm:z-auto sm:flex',
-                mobileSelectedUser && 'left-0 flex'
+                mobileSelectedUser.value && 'left-0 flex'
               )}
             >
               {/* Top Part */}
@@ -223,7 +224,7 @@ export default defineComponent({
                       {currentMessage.value &&
                         Object.keys(currentMessage.value).map((key) => (
                           < >
-                            {currentMessage.value[key].map((msg, index) => (
+                            {currentMessage.value[key].map((msg: Convo, index: number) => (
                               <div
                                 key={`${msg.sender}-${msg.timestamp}-${index}`}
                                 class={cn(

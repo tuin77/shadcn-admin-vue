@@ -18,7 +18,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
-import { ChatUser } from './data/chat-types'
+import { type ChatUser } from './data/chat-types'
 
 type User = Omit<ChatUser, 'messages'>
 
@@ -35,7 +35,7 @@ export function NewChat({ users, onOpenChange, open }: Props) {
   }
 
   const handleSelectUser = (user: User) => {
-    if (!selectedUsers.value.find((u) => u.id === user.id)) {
+    if (!selectedUsers.value.find((u: User) => u.id === user.id)) {
       setSelectedUsers([...selectedUsers.value, user])
     } else {
       handleRemoveUser(user.id)
@@ -43,7 +43,7 @@ export function NewChat({ users, onOpenChange, open }: Props) {
   }
 
   const handleRemoveUser = (userId: string) => {
-    setSelectedUsers(selectedUsers.value.filter((user) => user.id !== userId))
+    setSelectedUsers(selectedUsers.value.filter((user: User) => user.id !== userId))
   }
 
   watchEffect(() => {
@@ -54,19 +54,19 @@ export function NewChat({ users, onOpenChange, open }: Props) {
 
   return (
     <Dialog open={open} onUpdate:open={onOpenChange} >
-      <DialogContent class='sm:max-w-[600px]'>
+      <DialogContent class='sm:max-w-[600px]' >
         <DialogHeader>
           <DialogTitle>New message</DialogTitle>
         </DialogHeader>
         <div class='flex flex-col gap-4'>
           <div class='flex flex-wrap items-center gap-2'>
             <span class='text-muted-foreground text-sm'>To:</span>
-            {selectedUsers.value.map((user) => (
+            {selectedUsers.value.map((user: User) => (
               <Badge key={user.id} variant='default'>
                 {user.fullName}
                 <button
                   class='ring-offset-background focus:ring-ring ml-1 rounded-full outline-hidden focus:ring-2 focus:ring-offset-2'
-                  onKeyDown={(e) => {
+                  onKeydown={(e: KeyboardEvent) => {
                     if (e.key === 'Enter') {
                       handleRemoveUser(user.id)
                     }
@@ -86,6 +86,7 @@ export function NewChat({ users, onOpenChange, open }: Props) {
                 {users.map((user) => (
                   <CommandItem
                     key={user.id}
+                    value={user.id}
                     onSelect={() => handleSelectUser(user)}
                     class='flex items-center justify-between gap-2'
                   >
@@ -105,7 +106,7 @@ export function NewChat({ users, onOpenChange, open }: Props) {
                       </div>
                     </div>
 
-                    {selectedUsers.value.find((u) => u.id === user.id) && (
+                    {selectedUsers.value.find((u: User) => u.id === user.id) && (
                       <Check class='h-4 w-4' />
                     )}
                   </CommandItem>

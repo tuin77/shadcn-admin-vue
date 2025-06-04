@@ -8,6 +8,9 @@ interface Props extends PrimitiveProps {
   variant?: ButtonVariants['variant']
   size?: ButtonVariants['size']
   class?: HTMLAttributes['class']
+  onClick?: (event: MouseEvent) => void
+  disabled?: boolean
+  type?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -21,6 +24,8 @@ const props = withDefaults(defineProps<Props>(), {
     :as="as"
     :as-child="asChild"
     :class="cn(buttonVariants({ variant, size }), props.class)"
+    :disabled="disabled"
+    @click="onClick"
   >
     <slot />
   </Primitive>
