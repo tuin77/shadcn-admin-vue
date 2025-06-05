@@ -1,7 +1,7 @@
 import type { ColumnDef } from '@tanstack/vue-table'
 import { cn } from '@/lib/utils'
 
-// import LongText from '@/components/long-text'
+import LongText from '@/components/long-text'
 import { callTypes, userTypes } from '../data/data'
 import { User } from '../data/schema'
 // import { DataTableColumnHeader } from './data-table-column-header'
@@ -53,7 +53,7 @@ export const columns: ColumnDef<User>[] = [
       <DataTableColumnHeader column={column} title='Username' />
     ),
     cell: ({ row }) => (
-      <LongText class='max-w-36'>{row.getValue('username')}</LongText>
+      <LongText className='max-w-36'>{row.getValue('username')}</LongText>
     ),
     meta: {
       class: cn(
@@ -72,7 +72,7 @@ export const columns: ColumnDef<User>[] = [
     cell: ({ row }) => {
       const { firstName, lastName } = row.original
       const fullName = `${firstName} ${lastName}`
-      return <LongText class='max-w-36'>{fullName}</LongText>
+      return <LongText className='max-w-36'>{fullName}</LongText>
     },
     meta: { class: 'w-36' },
   },
