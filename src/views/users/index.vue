@@ -3,6 +3,7 @@ import { columns } from './components/columns'
 import DataTable from '../tasks/components/DataTable.vue'
 import UserNav from '../tasks/components/UserNav.vue'
 import { userListSchema } from './data/schema'
+// import { UsersDialogs } from './components/users-dialogs'
 
 import { users } from './data/users'
 const userList = userListSchema.parse(users)
@@ -21,4 +22,5 @@ const userList = userListSchema.parse(users)
     </div>
     <DataTable :data="userList" :columns="columns" />
   </div>
+  <!-- <UsersDialogs /> -->
 </template>

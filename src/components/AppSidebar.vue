@@ -12,6 +12,11 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  CircleHelp,
+  LayoutDashboard,
+  ClipboardList,
+  MessagesSquare,
+  Users,
 } from 'lucide-vue-next'
 import NavMain from '@/components/NavMain.vue'
 import NavProjects from '@/components/NavProjects.vue'
@@ -55,51 +60,34 @@ const data = {
     },
   ],
   navMain: [
+    // {
+    //   title: 'General',
+    //   url: '#',
+    //   isActive: true,
+    // },
     {
-      title: 'Playground',
-      url: '#',
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: 'dashboard',
-          url: '/',
-        },
-        {
-          title: 'table',
-          url: '/table',
-        },
-        {
-          title: 'chats',
-          url: '/chats',
-        },
-        {
-          title: 'users',
-          url: '/users',
-        },
-      ],
+      title: 'Dashboard',
+      url: '/',
+      icon: LayoutDashboard,
     },
     {
-      title: 'Models',
-      url: '#',
-      icon: Bot,
-      items: [
-        {
-          title: 'Genesis',
-          url: '#',
-        },
-        {
-          title: 'Explorer',
-          url: '#',
-        },
-        {
-          title: 'Quantum',
-          url: '#',
-        },
-      ],
+      title: 'Tasks',
+      url: '/tasks',
+      icon: ClipboardList,
     },
     {
-      title: 'Documentation',
+      title: 'Chats',
+      url: '/chats',
+      icon: MessagesSquare,
+    },
+    {
+      title: 'Users',
+      url: '/users',
+      icon: Users,
+    },
+
+    {
+      title: 'Settings',
       url: '#',
       icon: BookOpen,
       items: [
@@ -121,8 +109,10 @@ const data = {
         },
       ],
     },
+  ],
+  projects: [
     {
-      title: 'Settings',
+      name: 'Settings',
       url: '#',
       icon: Settings2,
       items: [
@@ -144,22 +134,10 @@ const data = {
         },
       ],
     },
-  ],
-  projects: [
     {
-      name: 'Design Engineering',
+      name: 'Help Center',
       url: '#',
-      icon: Frame,
-    },
-    {
-      name: 'Sales & Marketing',
-      url: '#',
-      icon: PieChart,
-    },
-    {
-      name: 'Travel',
-      url: '#',
-      icon: Map,
+      icon: CircleHelp,
     },
   ],
 }

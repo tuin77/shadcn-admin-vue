@@ -14,30 +14,42 @@ const router = createRouter({
       children: [
         {
           path: '',
-          name: 'dashboard',
+          name: 'Dashboard',
           component: () => import('@/views/dashboard/Example.vue'),
         },
+        // {
+        //   path: '/blankPage',
+        //   name: 'blankPage',
+        //   component: () => import('@/views/BlankPage.vue'),
+        // },
         {
-          path: '/blankPage',
-          name: 'blankPage',
-          component: () => import('@/views/BlankPage.vue'),
-        },
-        {
-          path: '/table',
-          name: 'table',
+          path: '/tasks',
+          name: 'Tasks',
           component: () => import('@/views/tasks/Example.vue'),
         },
         {
           path: '/chats',
-          name: 'chats',
+          name: 'Chats',
           component: () => import('@/views/chats'),
         },
         {
           path: '/users',
-          name: 'users',
+          name: 'Users',
           component: () => import('@/views/users/index.vue'),
         },
-        // users
+        {
+          path: '/',
+          name: 'Settings1',
+          // component: () => import('@/views/users/index.vue'),
+          children: [
+            {
+              path: '/settings',
+              name: 'Settings',
+              component: () => import('@/views/forms/Account.vue'),
+            }
+          ]
+        },
+        // settings
       ]
     },
     {

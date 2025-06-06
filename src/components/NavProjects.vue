@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  Folder,
-  Forward,
-  type LucideIcon,
-  MoreHorizontal,
-  Trash2,
-} from 'lucide-vue-next'
+import { Folder, Forward, type LucideIcon, MoreHorizontal, Trash2 } from 'lucide-vue-next'
 
 import {
   DropdownMenu,
@@ -37,7 +31,7 @@ const { isMobile } = useSidebar()
 
 <template>
   <SidebarGroup class="group-data-[collapsible=icon]:hidden">
-    <SidebarGroupLabel>Projects</SidebarGroupLabel>
+    <SidebarGroupLabel>Other</SidebarGroupLabel>
     <SidebarMenu>
       <SidebarMenuItem v-for="item in projects" :key="item.name">
         <SidebarMenuButton as-child>
