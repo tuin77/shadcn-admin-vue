@@ -13,43 +13,41 @@ const $route = useRoute()
 const sidebarNavItems: Item[] = [
   {
     title: 'Profile',
-    href: '/examples/forms',
+    href: '/settings',
   },
   {
     title: 'Account',
-    href: '/examples/forms/account',
+    href: '/settings/account',
   },
   {
     title: 'Appearance',
-    href: '/examples/forms/appearance',
+    href: '/settings/appearance',
   },
   {
     title: 'Notifications',
-    href: '/examples/forms/notifications',
+    href: '/settings/notifications',
   },
   {
     title: 'Display',
-    href: '/examples/forms/display',
+    href: '/settings/display',
   },
 ]
 </script>
 
 <template>
   <nav class="flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1">
-    <Button
-      v-for="item in sidebarNavItems"
-      :key="item.title"
-      as="a"
-      :href="item.href"
-      variant="ghost"
-      :class="
-        cn(
-          'w-full text-left justify-start',
-          $route.path === `${item.href}.html` && 'bg-muted hover:bg-muted',
-        )
-      "
-    >
-      {{ item.title }}
-    </Button>
+    <router-link v-for="item in sidebarNavItems" :key="item.href" :to="item.href">
+      <Button
+        variant="ghost"
+        :class="
+          cn(
+            'w-full text-left justify-start',
+            $route.path === `${item.href}` && 'bg-muted hover:bg-muted',
+          )
+        "
+      >
+        {{ item.title }}
+      </Button>
+    </router-link>
   </nav>
 </template>

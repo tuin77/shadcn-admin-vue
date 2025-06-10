@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Separator } from '@/components/ui/separator'
-import SidebarNav from '../components/SidebarNav.vue'
+import SidebarNav from './components/SidebarNav.vue'
 </script>
 
 <template>
@@ -28,7 +28,7 @@ import SidebarNav from '../components/SidebarNav.vue'
       </aside>
       <div class="flex-1 lg:max-w-2xl">
         <div class="space-y-6">
-          <slot />
+          <router-view />
         </div>
       </div>
     </div>

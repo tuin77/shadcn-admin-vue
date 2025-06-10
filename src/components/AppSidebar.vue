@@ -60,11 +60,6 @@ const data = {
     },
   ],
   navMain: [
-    // {
-    //   title: 'General',
-    //   url: '#',
-    //   isActive: true,
-    // },
     {
       title: 'Dashboard',
       url: '/',

@@ -38,18 +38,49 @@ const router = createRouter({
           component: () => import('@/views/users/index.vue'),
         },
         {
-          path: '/',
-          name: 'Settings1',
-          // component: () => import('@/views/users/index.vue'),
+          path: '/settings',
+          name: 'Settings',
+          // 父路由组件，若不需要展示特定内容，可使用空组件
+          component: () => import('@/views/forms/FormsLayout.vue'),
           children: [
             {
-              path: '/settings',
-              name: 'Settings',
-              component: () => import('@/views/forms/Account.vue'),
-            }
+              path: '',
+              name: 'ProfileForm',
+              component: () => import('@/views/forms/ProfileForm.vue'),
+            },
+            {
+              path: 'account',
+              name: 'Account',
+              component: () => import('@/views/forms/AccountForm.vue'),
+            },
+            {
+              path: 'appearance',
+              name: 'Appearance',
+              component: () => import('@/views/forms/AppearanceForm.vue'),
+            },
+            {
+              path: 'notifications',
+              name: 'Notifications',
+              component: () => import('@/views/forms/NotificationsForm.vue'),
+            },
+            {
+              path: 'display',
+              name: 'Display',
+              component: () => import('@/views/forms/DisplayForm.vue'),
+            },
           ]
         },
-        // settings
+        // {
+        //   path: '/settings',
+        //   name: 'SettingsAccount',
+        //   component: () => import('@/views/forms/Account.vue'),
+        // },
+        // {
+        //   path: '/settings/account',
+        //   name: 'SettingsAppearance',
+        //   component: () => import('@/views/forms/Appearance.vue'),
+        // }
+
       ]
     },
     {

@@ -35,10 +35,10 @@ const { isMobile } = useSidebar()
     <SidebarMenu>
       <SidebarMenuItem v-for="item in projects" :key="item.name">
         <SidebarMenuButton as-child>
-          <a :href="item.url">
+          <RouterLink :to="item.url">
             <component :is="item.icon" />
             <span>{{ item.name }}</span>
-          </a>
+          </RouterLink>
         </SidebarMenuButton>
         <DropdownMenu>
           <DropdownMenuTrigger as-child>
@@ -67,12 +67,6 @@ const { isMobile } = useSidebar()
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <SidebarMenuButton class="text-sidebar-foreground/70">
-          <MoreHorizontal class="text-sidebar-foreground/70" />
-          <span>More</span>
-        </SidebarMenuButton>
       </SidebarMenuItem>
     </SidebarMenu>
   </SidebarGroup>

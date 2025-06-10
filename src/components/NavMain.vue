@@ -39,37 +39,45 @@ defineProps<{
         class="group/collapsible"
       >
         <SidebarMenuItem>
-          <CollapsibleTrigger as-child>
-            <SidebarMenuButton :tooltip="item.title">
+          <template v-if="item.items?.length">
+            <CollapsibleTrigger as-child>
+              <SidebarMenuButton :tooltip="item.title">
+                <component :is="item.icon" v-if="item.icon" />
+                <span>{{ item.title }}</span>
+                <ChevronRight
+                  class="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90"
+                />
+              </SidebarMenuButton>
+            </CollapsibleTrigger>
+            <CollapsibleContent>
+              <SidebarMenuSub>
+                <SidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
+                  <SidebarMenuSubButton as-child>
+                    <RouterLink :to="subItem.url" custom v-slot="{ href, navigate, isExactActive }">
+                      <a
+                        :href="href"
+                        @click="navigate"
+                        :class="
+                          isExactActive && subItem.url !== '#'
+                            ? 'bg-[hsla(160,100%,37%,0.2)] '
+                            : 'inactiveClass'
+                        "
+                      >
+                        <span>{{ subItem.title }} </span>
+                      </a>
+                    </RouterLink>
+                  </SidebarMenuSubButton>
+                </SidebarMenuSubItem>
+              </SidebarMenuSub>
+            </CollapsibleContent>
+          </template>
+
+          <SidebarMenuButton v-else :tooltip="item.title" as-child>
+            <RouterLink :to="item.url">
               <component :is="item.icon" v-if="item.icon" />
               <span>{{ item.title }}</span>
-              <ChevronRight
-                v-if="item.items?.length"
-                class="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90"
-              />
-            </SidebarMenuButton>
-          </CollapsibleTrigger>
-          <CollapsibleContent v-if="item.items?.length">
-            <SidebarMenuSub>
-              <SidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
-                <SidebarMenuSubButton as-child>
-                  <RouterLink :to="subItem.url" custom v-slot="{ href, navigate, isExactActive }">
-                    <a
-                      :href="href"
-                      @click="navigate"
-                      :class="
-                        isExactActive && subItem.url !== '#'
-                          ? 'bg-[hsla(160,100%,37%,0.2)] '
-                          : 'inactiveClass'
-                      "
-                    >
-                      <span>{{ subItem.title }} </span>
-                    </a>
-                  </RouterLink>
-                </SidebarMenuSubButton>
-              </SidebarMenuSubItem>
-            </SidebarMenuSub>
-          </CollapsibleContent>
+            </RouterLink>
+          </SidebarMenuButton>
         </SidebarMenuItem>
       </Collapsible>
     </SidebarMenu>
