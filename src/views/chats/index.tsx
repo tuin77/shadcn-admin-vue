@@ -17,7 +17,7 @@ import { type ChatUser, type Convo } from './data/chat-types'
 import { conversations } from './data/convo.json'
 
 export default defineComponent({
-  name: "TsxDemo",
+  name: "ChatsDemo",
   setup(props) {
 
     const search = ref('')

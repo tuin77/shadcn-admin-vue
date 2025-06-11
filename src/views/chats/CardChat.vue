@@ -30,7 +30,7 @@ const inputLength = computed(() => input.value.trim().length)
 const users = ref([
   {
     name: 'Olivia Martin',
-    email: 'm@example.com',
+    email: 'tuincn@gmail.com',
     avatar: '/avatars/01.png',
   },
   {
@@ -78,7 +78,7 @@ const selectedUsers = ref<User[]>([])
         </Avatar>
         <div>
           <p class="text-sm font-medium leading-none">Sofia Davis</p>
-          <p class="text-sm text-muted-foreground">m@example.com</p>
+          <p class="text-sm text-muted-foreground">tuincn@gmail.com</p>
         </div>
       </div>
       <TooltipProvider>

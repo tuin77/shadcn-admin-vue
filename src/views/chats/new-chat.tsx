@@ -29,6 +29,7 @@ type Props = {
 }
 export function NewChat({ users, onOpenChange, open }: Props) {
   const selectedUsers = ref<User[]>([])
+  const count = ref(1)
   function setSelectedUsers(val: User[]) {
 
     selectedUsers.value = val

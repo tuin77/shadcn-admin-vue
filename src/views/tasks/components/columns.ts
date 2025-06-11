@@ -13,11 +13,11 @@ export const columns: ColumnDef<Task>[] = [
     id: 'select',
     header: ({ table }) => h(Checkbox, {
       'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
-      'onUpdate:modelValue': value => table.toggleAllPageRowsSelected(!!value),
+      'onUpdate:modelValue': (value: any) => table.toggleAllPageRowsSelected(!!value),
       'ariaLabel': 'Select all',
       'class': 'translate-y-0.5',
     }),
-    cell: ({ row }) => h(Checkbox, { 'modelValue': row.getIsSelected(), 'onUpdate:modelValue': value => row.toggleSelected(!!value), 'ariaLabel': 'Select row', 'class': 'translate-y-0.5' }),
+    cell: ({ row }) => h(Checkbox, { 'modelValue': row.getIsSelected(), 'onUpdate:modelValue': (value: any) => row.toggleSelected(!!value), 'ariaLabel': 'Select row', 'class': 'translate-y-0.5' }),
     enableSorting: false,
     enableHiding: false,
   },

@@ -12,6 +12,11 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  CircleHelp,
+  LayoutDashboard,
+  ClipboardList,
+  MessagesSquare,
+  Users,
 } from 'lucide-vue-next'
 import NavMain from '@/components/NavMain.vue'
 import NavProjects from '@/components/NavProjects.vue'
@@ -34,7 +39,7 @@ const props = withDefaults(defineProps<SidebarProps>(), {
 const data = {
   user: {
     name: 'shadcn',
-    email: 'm@example.com',
+    email: 'tuincn@gmail.com',
     avatar: '/avatars/shadcn.jpg',
   },
   teams: [
@@ -56,106 +61,81 @@ const data = {
   ],
   navMain: [
     {
-      title: 'Playground',
-      url: '#',
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: 'dashboard',
-          url: '/',
-        },
-        {
-          title: 'table',
-          url: '/table',
-        },
-        {
-          title: 'chats',
-          url: '/chats',
-        },
-      ],
+      title: 'Dashboard',
+      url: '/',
+      icon: LayoutDashboard,
     },
     {
-      title: 'Models',
-      url: '#',
-      icon: Bot,
-      items: [
-        {
-          title: 'Genesis',
-          url: '#',
-        },
-        {
-          title: 'Explorer',
-          url: '#',
-        },
-        {
-          title: 'Quantum',
-          url: '#',
-        },
-      ],
+      title: 'Tasks',
+      url: '/tasks',
+      icon: ClipboardList,
     },
     {
-      title: 'Documentation',
-      url: '#',
+      title: 'Chats',
+      url: '/chats',
+      icon: MessagesSquare,
+    },
+    {
+      title: 'Users',
+      url: '/users',
+      icon: Users,
+    },
+
+    {
+      title: 'Settings',
       icon: BookOpen,
       items: [
         {
-          title: 'Introduction',
-          url: '#',
+          title: 'Profile',
+          url: '/settings',
         },
         {
-          title: 'Get Started',
-          url: '#',
+          title: 'Account',
+          url: '/settings/account',
         },
         {
-          title: 'Tutorials',
-          url: '#',
+          title: 'Appearance',
+          url: '/settings/appearance',
         },
         {
-          title: 'Changelog',
-          url: '#',
-        },
-      ],
-    },
-    {
-      title: 'Settings',
-      url: '#',
-      icon: Settings2,
-      items: [
-        {
-          title: 'General',
-          url: '#',
+          title: 'Notifications',
+          url: '/settings/notifications',
         },
         {
-          title: 'Team',
-          url: '#',
-        },
-        {
-          title: 'Billing',
-          url: '#',
-        },
-        {
-          title: 'Limits',
-          url: '#',
+          title: 'Display',
+          url: '/settings/display',
         },
       ],
     },
   ],
   projects: [
     {
-      name: 'Design Engineering',
-      url: '#',
-      icon: Frame,
+      name: 'Settings',
+      url: '/blank-page',
+      icon: Settings2,
+      //   items: [
+      //     {
+      //       title: 'General',
+      //       url: '#',
+      //     },
+      //     {
+      //       title: 'Team',
+      //       url: '#',
+      //     },
+      //     {
+      //       title: 'Billing',
+      //       url: '#',
+      //     },
+      //     {
+      //       title: 'Limits',
+      //       url: '#',
+      //     },
+      //   ],
     },
     {
-      name: 'Sales & Marketing',
-      url: '#',
-      icon: PieChart,
-    },
-    {
-      name: 'Travel',
-      url: '#',
-      icon: Map,
+      name: 'Help Center',
+      url: '/help-center',
+      icon: CircleHelp,
     },
   ],
 }

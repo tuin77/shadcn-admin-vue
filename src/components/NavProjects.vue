@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import {
-  Folder,
-  Forward,
-  type LucideIcon,
-  MoreHorizontal,
-  Trash2,
-} from 'lucide-vue-next'
+import { Folder, Forward, type LucideIcon, MoreHorizontal, Trash2 } from 'lucide-vue-next'
 
 import {
   DropdownMenu,
@@ -37,14 +31,22 @@ const { isMobile } = useSidebar()
 
 <template>
   <SidebarGroup class="group-data-[collapsible=icon]:hidden">
-    <SidebarGroupLabel>Projects</SidebarGroupLabel>
+    <SidebarGroupLabel>Other</SidebarGroupLabel>
     <SidebarMenu>
       <SidebarMenuItem v-for="item in projects" :key="item.name">
         <SidebarMenuButton as-child>
-          <a :href="item.url">
-            <component :is="item.icon" />
-            <span>{{ item.name }}</span>
-          </a>
+          <RouterLink :to="item.url" custom v-slot="{ href, navigate, isExactActive }">
+            <a
+              :href="href"
+              @click="navigate"
+              :class="
+                isExactActive && item.url !== '#' ? 'bg-[hsla(160,100%,37%,0.2)] ' : 'inactiveClass'
+              "
+            >
+              <component :is="item.icon" />
+              <span>{{ item.name }}</span>
+            </a>
+          </RouterLink>
         </SidebarMenuButton>
         <DropdownMenu>
           <DropdownMenuTrigger as-child>
@@ -73,12 +75,6 @@ const { isMobile } = useSidebar()
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </SidebarMenuItem>
-      <SidebarMenuItem>
-        <SidebarMenuButton class="text-sidebar-foreground/70">
-          <MoreHorizontal class="text-sidebar-foreground/70" />
-          <span>More</span>
-        </SidebarMenuButton>
       </SidebarMenuItem>
     </SidebarMenu>
   </SidebarGroup>
