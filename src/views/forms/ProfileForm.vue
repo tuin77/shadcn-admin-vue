@@ -27,7 +27,7 @@ import { Separator } from '@/components/ui/separator'
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from '@/components/ui/toast'
 
-const verifiedEmails = ref(['m@example.com', 'm@google.com', 'm@support.com'])
+const verifiedEmails = ref(['tuincn@gmail.com', 'm@google.com', 'm@support.com'])
 
 const profileFormSchema = toTypedSchema(
   z.object({
@@ -171,7 +171,7 @@ const onSubmit = handleSubmit((values) => {
     <div class="flex gap-2 justify-start">
       <Button type="submit"> Update profile </Button>
 
-      <Button type="button" variant="outline" @click="resetForm"> Reset form </Button>
+      <Button type="button" variant="outline" @click="() => resetForm"> Reset form </Button>
     </div>
   </form>
 </template>

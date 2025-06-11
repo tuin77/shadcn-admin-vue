@@ -58,7 +58,7 @@ const handleLogin = () => {
             <div class="grid gap-6">
               <div class="grid gap-3">
                 <Label for="email">Email</Label>
-                <Input id="email" type="email" placeholder="m@example.com" required />
+                <Input id="email" type="email" placeholder="tuincn@gmail.com" required />
               </div>
               <div class="grid gap-3">
                 <div class="flex items-center">

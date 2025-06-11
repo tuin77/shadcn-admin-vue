@@ -3,47 +3,30 @@ import { cn } from '@/lib/utils'
 
 import LongText from '@/components/long-text'
 import { callTypes, userTypes } from '../data/data'
-import { User } from '../data/schema'
-// import { DataTableColumnHeader } from './data-table-column-header'
-// import { DataTableRowActions } from './data-table-row-actions'
+import { type User } from '../data/schema'
 
 import { h } from 'vue'
 import { Badge } from '@/components/ui/badge'
 import { Checkbox } from '@/components/ui/checkbox'
-import { labels, priorities, statuses } from '../data/data'
-// import DataTableColumnHeader from './DataTableColumnHeader.vue'
-// import DataTableRowActions from './DataTableRowActions.vue'
-import DataTableColumnHeader from '../../tasks/components/DataTableColumnHeader.vue'
-import DataTableRowActions from '../../tasks/components/DataTableRowActions.vue'
+import DataTableColumnHeader from './DataTableColumnHeader.vue'
+import DataTableRowActions from './DataTableRowActions.vue'
 
 export const columns: ColumnDef<User>[] = [
   {
     id: 'select',
-    header: ({ table }) => (
-      <Checkbox
-        checked={
-          table.getIsAllPageRowsSelected() ||
-          (table.getIsSomePageRowsSelected() && 'indeterminate')
-        }
-        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label='Select all'
-        class='translate-y-[2px]'
-      />
-    ),
+    header: ({ table }) => h(Checkbox, {
+      'modelValue': table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && 'indeterminate'),
+      'onUpdate:modelValue': (value: any) => table.toggleAllPageRowsSelected(!!value),
+      'ariaLabel': 'Select all',
+      'class': 'translate-y-0.5',
+    }),
     meta: {
       class: cn(
         'sticky md:table-cell left-0 z-10 rounded-tl',
         'bg-background transition-colors duration-200 group-hover/row:bg-muted group-data-[state=selected]/row:bg-muted'
       ),
     },
-    cell: ({ row }) => (
-      <Checkbox
-        checked={row.getIsSelected()}
-        onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label='Select row'
-        class='translate-y-[2px]'
-      />
-    ),
+    cell: ({ row }) => h(Checkbox, { 'modelValue': row.getIsSelected(), 'onUpdate:modelValue': (value: any) => row.toggleSelected(!!value), 'ariaLabel': 'Select row', 'class': 'translate-y-0.5' }),
     enableSorting: false,
     enableHiding: false,
   },
@@ -145,6 +128,6 @@ export const columns: ColumnDef<User>[] = [
   },
   {
     id: 'actions',
-    cell: DataTableRowActions,
+    cell: ({ row }) => h(DataTableRowActions, { row }),
   },
 ]

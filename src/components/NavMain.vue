@@ -16,7 +16,7 @@ import {
 defineProps<{
   items: {
     title: string
-    url: string
+    url?: string
     icon?: LucideIcon
     isActive?: boolean
     items?: {
@@ -72,10 +72,20 @@ defineProps<{
             </CollapsibleContent>
           </template>
 
-          <SidebarMenuButton v-else :tooltip="item.title" as-child>
-            <RouterLink :to="item.url">
-              <component :is="item.icon" v-if="item.icon" />
-              <span>{{ item.title }}</span>
+          <SidebarMenuButton v-else-if="item.url" :tooltip="item.title" as-child>
+            <RouterLink :to="item.url" custom v-slot="{ href, navigate, isExactActive }">
+              <a
+                :href="href"
+                @click="navigate"
+                :class="
+                  isExactActive && item.url !== '#'
+                    ? 'bg-[hsla(160,100%,37%,0.2)] '
+                    : 'inactiveClass'
+                "
+              >
+                <component :is="item.icon" v-if="item.icon" />
+                <span>{{ item.title }}</span>
+              </a>
             </RouterLink>
           </SidebarMenuButton>
         </SidebarMenuItem>

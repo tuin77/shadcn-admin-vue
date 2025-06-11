@@ -70,16 +70,16 @@ const router = createRouter({
             },
           ]
         },
-        // {
-        //   path: '/settings',
-        //   name: 'SettingsAccount',
-        //   component: () => import('@/views/forms/Account.vue'),
-        // },
-        // {
-        //   path: '/settings/account',
-        //   name: 'SettingsAppearance',
-        //   component: () => import('@/views/forms/Appearance.vue'),
-        // }
+        {
+          path: '/help-center',
+          name: 'HelpCenter',
+          component: () => import('@/views/coming-soon.tsx'),
+        },
+        {
+          path: '/blank-page',
+          name: 'BlankPage',
+          component: () => import('@/views/BlankPage.vue'),
+        },
 
       ]
     },

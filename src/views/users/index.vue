@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { columns } from './components/columns'
-import DataTable from '../tasks/components/DataTable.vue'
+import DataTable from './components/DataTable.vue'
 import UserNav from '../tasks/components/UserNav.vue'
 import { userListSchema } from './data/schema'
 // import { UsersDialogs } from './components/users-dialogs'

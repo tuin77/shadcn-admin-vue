@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Separator } from '@/components/ui/separator'
+import VPImage from '@/components/VPImage.vue'
 import SidebarNav from './components/SidebarNav.vue'
 </script>
 

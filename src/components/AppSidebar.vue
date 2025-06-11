@@ -39,7 +39,7 @@ const props = withDefaults(defineProps<SidebarProps>(), {
 const data = {
   user: {
     name: 'shadcn',
-    email: 'm@example.com',
+    email: 'tuincn@gmail.com',
     avatar: '/avatars/shadcn.jpg',
   },
   teams: [
@@ -83,24 +83,27 @@ const data = {
 
     {
       title: 'Settings',
-      url: '#',
       icon: BookOpen,
       items: [
         {
-          title: 'Introduction',
-          url: '#',
+          title: 'Profile',
+          url: '/settings',
         },
         {
-          title: 'Get Started',
-          url: '#',
+          title: 'Account',
+          url: '/settings/account',
         },
         {
-          title: 'Tutorials',
-          url: '#',
+          title: 'Appearance',
+          url: '/settings/appearance',
         },
         {
-          title: 'Changelog',
-          url: '#',
+          title: 'Notifications',
+          url: '/settings/notifications',
+        },
+        {
+          title: 'Display',
+          url: '/settings/display',
         },
       ],
     },
@@ -108,30 +111,30 @@ const data = {
   projects: [
     {
       name: 'Settings',
-      url: '#',
+      url: '/blank-page',
       icon: Settings2,
-      items: [
-        {
-          title: 'General',
-          url: '#',
-        },
-        {
-          title: 'Team',
-          url: '#',
-        },
-        {
-          title: 'Billing',
-          url: '#',
-        },
-        {
-          title: 'Limits',
-          url: '#',
-        },
-      ],
+      //   items: [
+      //     {
+      //       title: 'General',
+      //       url: '#',
+      //     },
+      //     {
+      //       title: 'Team',
+      //       url: '#',
+      //     },
+      //     {
+      //       title: 'Billing',
+      //       url: '#',
+      //     },
+      //     {
+      //       title: 'Limits',
+      //       url: '#',
+      //     },
+      //   ],
     },
     {
       name: 'Help Center',
-      url: '#',
+      url: '/help-center',
       icon: CircleHelp,
     },
   ],

@@ -35,9 +35,17 @@ const { isMobile } = useSidebar()
     <SidebarMenu>
       <SidebarMenuItem v-for="item in projects" :key="item.name">
         <SidebarMenuButton as-child>
-          <RouterLink :to="item.url">
-            <component :is="item.icon" />
-            <span>{{ item.name }}</span>
+          <RouterLink :to="item.url" custom v-slot="{ href, navigate, isExactActive }">
+            <a
+              :href="href"
+              @click="navigate"
+              :class="
+                isExactActive && item.url !== '#' ? 'bg-[hsla(160,100%,37%,0.2)] ' : 'inactiveClass'
+              "
+            >
+              <component :is="item.icon" />
+              <span>{{ item.name }}</span>
+            </a>
           </RouterLink>
         </SidebarMenuButton>
         <DropdownMenu>
